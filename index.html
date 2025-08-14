@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -99,10 +98,24 @@
   footer .footer-links,footer .social-links{display:flex;justify-content:center;gap:30px;margin-bottom:20px;flex-wrap:wrap;}
   footer .footer-links a,footer .social-links a{color:#fff;font-weight:600;text-decoration:none;}
   footer .footer-links a:hover,footer .social-links a:hover{color:#FFD700;}
-  @media (max-width:768px){nav ul{display:none;}#hero{padding:0 20px;text-align:center;justify-content:center;}.features{flex-direction:column;}.offer-box{flex-direction:column;}#contact .container{flex-direction:column;}}
+
+  /* تحسين عرض الموبايل */
+  @media (max-width:768px){
+    header .container{flex-direction:column;align-items:flex-start;padding:10px 20px;}
+    nav ul{flex-direction:column;width:100%;margin-top:10px;}
+    nav ul li{width:100%;margin:5px 0;}
+    .hero-content h1{font-size:32px;}
+    .hero-content p{font-size:18px;}
+    .features{flex-direction:column;align-items:center;}
+    .feature{width:90%;margin-bottom:20px;}
+    .offer-box{flex-direction:column;align-items:center;}
+    .offer-box img{width:90%;margin-bottom:15px;}
+    .menu-grid{grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:15px;}
+    .menu-item img{height:120px;}
+    #reservation input, #reservation button{width:100%;padding:12px;margin-bottom:10px;font-size:16px;}
+  }
   </style>
 </head>
-
 <body>
   <!-- SPLASH SCREEN -->
   <div id="splash">مرحبًا بك في Etalyano</div>
@@ -139,14 +152,14 @@
   </section>
 
   <!-- WHY US -->
-<section id="why">
-  <h2>لماذا تختارنا</h2>
-  <div class="features">
-    <div class="feature"><i class="fas fa-utensils"></i><h3>أطباق لذيذة</h3><p>أفضل المكونات وأشهى الوصفات.</p></div>
-    <div class="feature"><i class="fas fa-mug-hot"></i><h3>جو مريح</h3><p>تجربة تناول طعام لا مثيل لها.</p></div>
-    <div class="feature"><i class="fas fa-concierge-bell"></i><h3>خدمة ممتازة</h3><p>فريقنا يقدم لك أفضل خدمة.</p></div>
-  </div>
-</section>
+  <section id="why">
+    <h2>لماذا تختارنا</h2>
+    <div class="features">
+      <div class="feature"><i class="fas fa-utensils"></i><h3>أطباق لذيذة</h3><p>أفضل المكونات وأشهى الوصفات.</p></div>
+      <div class="feature"><i class="fas fa-mug-hot"></i><h3>جو مريح</h3><p>تجربة تناول طعام لا مثيل لها.</p></div>
+      <div class="feature"><i class="fas fa-concierge-bell"></i><h3>خدمة ممتازة</h3><p>فريقنا يقدم لك أفضل خدمة.</p></div>
+    </div>
+  </section>
 
   <!-- MENU -->
   <section id="menu">
@@ -156,10 +169,10 @@
       <button data-filter="pizza">بيتزا</button>
       <button data-filter="pasta">  كريبات </button>
       <button data-filter="dessert">حلويات</button>
-        <button data-filter="pasta">  عصاير  </button>
+      <button data-filter="pasta">  عصاير  </button>
     </div>
     <div class="menu-grid">
-      <!-- هنا محتوى الأكلات كما كان -->
+      <!-- محتوى الأكلات -->
       <div class="menu-item pizza"><img src="https://th.bing.com/th/id/R.2a643cf63ea0952dec79dd63abff93f4?rik=rZkn9sdf3AE70A&riu=http%3a%2f%2fwww.papajohnsegypt.com%2fimages%2fProducts%2fMargherita.jpg&ehk=FSNCnEPJzfKo%2bw9hG%2bicqgMncn0Oub0bBmJXmzvR4ys%3d&risl=&pid=ImgRaw&r=0" alt=""><h3>بيتزا مارغريتا</h3><p>120 ج</p></div>
       <div class="menu-item pizza"><img src="https://tse2.mm.bing.net/th/id/OIP.SlMifJwaSa0FJ4qIam9G_AHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt=""><h3>بيتزا ببروني</h3><p>135 ج</p></div>
       <div class="menu-item pizza"><img src="https://th.bing.com/th/id/R.695cb752aa1bf1aa1eb93d1dee80e0ef?rik=CcfprQ68EVcUKw&pid=ImgRaw&r=0" alt=""><h3>بيتزا خضار</h3><p>110 ج</p></div>
@@ -182,8 +195,8 @@
     <div class="offer-box">
       <img src="https://tse4.mm.bing.net/th/id/R.2a643cf63ea0952dec79dd63abff93f4?rik=rZkn9sdf3AE70A&riu=http%3a%2f%2fwww.papajohnsegypt.com%2fimages%2fProducts%2fMargherita.jpg&ehk=FSNCnEPJzfKo%2bw9hG%2bicqgMncn0Oub0bBmJXmzvR4ys%3d&risl=&pid=ImgRaw&r=0" alt="">
       <div class="offer-details">
-        <p>خصم 25% على جميع الطلبات حتى نهاية الأسبوع</p>
-        <div id="countdown">00:00:00</div>
+        <p>احصل على خصم 20% على البيتزا!</p>
+        <div id="countdown">02:15:45</div>
       </div>
     </div>
   </section>
@@ -192,9 +205,21 @@
   <section id="testimonials">
     <h2>آراء العملاء</h2>
     <div class="testimonial-slider">
-      <div class="testimonial"><img src="https://randomuser.me/api/portraits/men/1.jpg" alt=""><p>الطعام رائع والخدمة ممتازة!</p><h4>أحمد</h4></div>
-      <div class="testimonial"><img src="https://randomuser.me/api/portraits/women/2.jpg" alt=""><p>تجربة رائعة، سأعود بالتأكيد.</p><h4>سارة</h4></div>
-      <div class="testimonial"><img src="https://randomuser.me/api/portraits/men/3.jpg" alt=""><p>أفضل مطعم إيطالي في المدينة.</p><h4>محمد</h4></div>
+      <div class="testimonial">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="">
+        <p>أفضل تجربة طعام على الإطلاق!</p>
+        <h4>أحمد</h4>
+      </div>
+      <div class="testimonial">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="">
+        <p>الخدمة كانت رائعة والأطباق لذيذة!</p>
+        <h4>سارة</h4>
+      </div>
+      <div class="testimonial">
+        <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="">
+        <p>أنصح الجميع بتجربة Etalyano!</p>
+        <h4>محمود</h4>
+      </div>
     </div>
   </section>
 
@@ -202,14 +227,14 @@
   <section id="contact">
     <div class="container">
       <div id="reservation">
-        <h2>احجز الآن</h2>
+        <h2>احجز طاولتك</h2>
         <input type="text" placeholder="الاسم">
-        <input type="tel" placeholder="رقم الهاتف">
-        <input type="date" placeholder="التاريخ">
-        <button class="btn btn-reserve">احجز</button>
+        <input type="text" placeholder="رقم الهاتف">
+        <input type="text" placeholder="عدد الأشخاص">
+        <button class="btn btn-reserve">احجز الآن</button>
       </div>
       <div class="map">
-        <iframe src="https://maps.google.com/maps?q=egypt&t=&z=5&ie=UTF8&iwloc=&output=embed"></iframe>
+        <iframe src="https://maps.google.com/maps?q=cairo&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
       </div>
     </div>
   </section>
@@ -217,55 +242,169 @@
   <!-- FOOTER -->
   <footer>
     <div class="footer-links">
-      <a href="#hero">الرئيسية</a>
-      <a href="#menu">القائمة</a>
-      <a href="#contact">التواصل</a>
+      <a href="#">الرئيسية</a>
+      <a href="#">لماذا نحن</a>
+      <a href="#">قائمة الطعام</a>
+      <a href="#">العروض</a>
+      <a href="#">التواصل</a>
     </div>
     <div class="social-links">
       <a href="#"><i class="fab fa-facebook-f"></i></a>
       <a href="#"><i class="fab fa-twitter"></i></a>
       <a href="#"><i class="fab fa-instagram"></i></a>
     </div>
-    <p>جميع الحقوق محفوظة &copy; 2025 Etalyano</p>
+    <p>&copy; 2025 Etalyano. جميع الحقوق محفوظة.</p>
   </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // SPLASH SCREEN
+    window.addEventListener('load',()=>{document.getElementById('splash').style.display='none';});
 
-<script>
-  // SPLASH
-  window.addEventListener('load',()=>{document.getElementById('splash').style.display='none';});
-
-  // MENU FILTER
-  const filterButtons = document.querySelectorAll('.filter-buttons button');
-  const menuItems = document.querySelectorAll('.menu-item');
-  filterButtons.forEach(button=>{
-    button.addEventListener('click',()=>{
-      filterButtons.forEach(btn=>btn.classList.remove('active'));
-      button.classList.add('active');
-      const filter = button.dataset.filter;
-      menuItems.forEach(item=>{
-        if(filter==='all'){item.style.display='block';} 
-        else{item.style.display = item.classList.contains(filter)?'block':'none';}
+    // MENU FILTER
+    const filterButtons=document.querySelectorAll('.filter-buttons button');
+    const menuItems=document.querySelectorAll('.menu-item');
+    filterButtons.forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        filterButtons.forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter=btn.getAttribute('data-filter');
+        menuItems.forEach(item=>{
+          if(filter==='all'||item.classList.contains(filter)){
+            item.style.display='block';
+          }else{item.style.display='none';}
+        });
       });
     });
-  });
-
-  // OFFERS COUNTDOWN
-  const countdownEl = document.getElementById('countdown');
-  const offerEnd = new Date(); offerEnd.setDate(offerEnd.getDate() + 2);
-  function updateCountdown(){
-    const now = new Date(); const diff = offerEnd - now;
-    if(diff <= 0){countdownEl.innerHTML = "انتهى العرض!"; clearInterval(timer); return;}
-    const hours = Math.floor(diff/1000/60/60);
-    const minutes = Math.floor((diff/1000/60)%60);
-    const seconds = Math.floor((diff/1000)%60);
-    countdownEl.innerHTML = String(hours).padStart(2,'0') + ":" + String(minutes).padStart(2,'0') + ":" + String(seconds).padStart(2,'0');
-  }
-  const timer = setInterval(updateCountdown,1000); updateCountdown();
-</script>
-
+  </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
