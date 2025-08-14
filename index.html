@@ -1,3 +1,33 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -69,7 +99,7 @@
   .menu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px;}
   .menu-item{background-color:#FAF6F2;border-radius:8px;box-shadow:0 2px 10px rgba(211,84,0,0.15);overflow:hidden;opacity:1;transform:translateY(0);transition:opacity .45s ease,transform .45s ease;}
   .menu-item img{width:100%;height:140px;object-fit:cover;border-bottom:3px solid #D35400;}
-  .menu-item h3{margin:15px 0 8px;font-size:20px;color:#D35400;}
+  .menu-item h3{margin:15px 0 8px;font-size:18px;color:#D35400;} /* تم تصغير الخط */
   .menu-item p{font-size:18px;color:#F1C40F;font-weight:700;margin-bottom:15px;}
 
   /* OFFERS */
@@ -99,23 +129,16 @@
   footer .footer-links a,footer .social-links a{color:#fff;font-weight:600;text-decoration:none;}
   footer .footer-links a:hover,footer .social-links a:hover{color:#FFD700;}
 
-  /* تحسين عرض الموبايل */
-  @media (max-width:768px){
-    header .container{flex-direction:column;align-items:flex-start;padding:10px 20px;}
-    nav ul{flex-direction:column;width:100%;margin-top:10px;}
-    nav ul li{width:100%;margin:5px 0;}
-    .hero-content h1{font-size:32px;}
-    .hero-content p{font-size:18px;}
-    .features{flex-direction:column;align-items:center;}
-    .feature{width:90%;margin-bottom:20px;}
-    .offer-box{flex-direction:column;align-items:center;}
-    .offer-box img{width:90%;margin-bottom:15px;}
-    .menu-grid{grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:15px;}
-    .menu-item img{height:120px;}
-    #reservation input, #reservation button{width:100%;padding:12px;margin-bottom:10px;font-size:16px;}
+  /* تعديل أيقونة الهامبورجر على الشمال */
+  .navbar-toggler {
+      margin-left: 0;
+      margin-right: auto;
   }
+
+  @media (max-width:768px){nav ul{display:none;}#hero{padding:0 20px;text-align:center;justify-content:center;}.features{flex-direction:column;}.offer-box{flex-direction:column;}#contact .container{flex-direction:column;}}
   </style>
 </head>
+
 <body>
   <!-- SPLASH SCREEN -->
   <div id="splash">مرحبًا بك في Etalyano</div>
@@ -152,14 +175,14 @@
   </section>
 
   <!-- WHY US -->
-  <section id="why">
-    <h2>لماذا تختارنا</h2>
-    <div class="features">
-      <div class="feature"><i class="fas fa-utensils"></i><h3>أطباق لذيذة</h3><p>أفضل المكونات وأشهى الوصفات.</p></div>
-      <div class="feature"><i class="fas fa-mug-hot"></i><h3>جو مريح</h3><p>تجربة تناول طعام لا مثيل لها.</p></div>
-      <div class="feature"><i class="fas fa-concierge-bell"></i><h3>خدمة ممتازة</h3><p>فريقنا يقدم لك أفضل خدمة.</p></div>
-    </div>
-  </section>
+<section id="why">
+  <h2>لماذا تختارنا</h2>
+  <div class="features">
+    <div class="feature"><i class="fas fa-utensils"></i><h3>أطباق لذيذة</h3><p>أفضل المكونات وأشهى الوصفات.</p></div>
+    <div class="feature"><i class="fas fa-mug-hot"></i><h3>جو مريح</h3><p>تجربة تناول طعام لا مثيل لها.</p></div>
+    <div class="feature"><i class="fas fa-concierge-bell"></i><h3>خدمة ممتازة</h3><p>فريقنا يقدم لك أفضل خدمة.</p></div>
+  </div>
+</section>
 
   <!-- MENU -->
   <section id="menu">
@@ -172,7 +195,7 @@
       <button data-filter="pasta">  عصاير  </button>
     </div>
     <div class="menu-grid">
-      <!-- محتوى الأكلات -->
+      <!-- هنا محتوى الأكلات كما كان -->
       <div class="menu-item pizza"><img src="https://th.bing.com/th/id/R.2a643cf63ea0952dec79dd63abff93f4?rik=rZkn9sdf3AE70A&riu=http%3a%2f%2fwww.papajohnsegypt.com%2fimages%2fProducts%2fMargherita.jpg&ehk=FSNCnEPJzfKo%2bw9hG%2bicqgMncn0Oub0bBmJXmzvR4ys%3d&risl=&pid=ImgRaw&r=0" alt=""><h3>بيتزا مارغريتا</h3><p>120 ج</p></div>
       <div class="menu-item pizza"><img src="https://tse2.mm.bing.net/th/id/OIP.SlMifJwaSa0FJ4qIam9G_AHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt=""><h3>بيتزا ببروني</h3><p>135 ج</p></div>
       <div class="menu-item pizza"><img src="https://th.bing.com/th/id/R.695cb752aa1bf1aa1eb93d1dee80e0ef?rik=CcfprQ68EVcUKw&pid=ImgRaw&r=0" alt=""><h3>بيتزا خضار</h3><p>110 ج</p></div>
@@ -195,8 +218,8 @@
     <div class="offer-box">
       <img src="https://tse4.mm.bing.net/th/id/R.2a643cf63ea0952dec79dd63abff93f4?rik=rZkn9sdf3AE70A&riu=http%3a%2f%2fwww.papajohnsegypt.com%2fimages%2fProducts%2fMargherita.jpg&ehk=FSNCnEPJzfKo%2bw9hG%2bicqgMncn0Oub0bBmJXmzvR4ys%3d&risl=&pid=ImgRaw&r=0" alt="">
       <div class="offer-details">
-        <p>احصل على خصم 20% على البيتزا!</p>
-        <div id="countdown">02:15:45</div>
+        <p>خصم 25% على جميع الطلبات حتى نهاية الأسبوع</p>
+        <div id="countdown">00:00:00</div>
       </div>
     </div>
   </section>
@@ -205,216 +228,42 @@
   <section id="testimonials">
     <h2>آراء العملاء</h2>
     <div class="testimonial-slider">
-      <div class="testimonial">
-        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="">
-        <p>أفضل تجربة طعام على الإطلاق!</p>
-        <h4>أحمد</h4>
-      </div>
-      <div class="testimonial">
-        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="">
-        <p>الخدمة كانت رائعة والأطباق لذيذة!</p>
-        <h4>سارة</h4>
-      </div>
-      <div class="testimonial">
-        <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="">
-        <p>أنصح الجميع بتجربة Etalyano!</p>
-        <h4>محمود</h4>
-      </div>
+      <div class="testimonial"><img src="https://randomuser.me/api/portraits/men/1.jpg" alt=""><p>أفضل مطعم جربته!</p><h4>أحمد سامي</h4></div>
+      <div class="testimonial"><img src="https://randomuser.me/api/portraits/women/2.jpg" alt=""><p>الخدمة رائعة والطعام لذيذ</p><h4>ليلى محمد</h4></div>
+      <div class="testimonial"><img src="https://randomuser.me/api/portraits/men/3.jpg" alt=""><p>أنصح الجميع بزيارتهم</p><h4>محمود علي</h4></div>
     </div>
   </section>
 
   <!-- CONTACT -->
   <section id="contact">
     <div class="container">
-      <div id="reservation">
-        <h2>احجز طاولتك</h2>
-        <input type="text" placeholder="الاسم">
-        <input type="text" placeholder="رقم الهاتف">
-        <input type="text" placeholder="عدد الأشخاص">
-        <button class="btn btn-reserve">احجز الآن</button>
-      </div>
+      <form id="reservation">
+        <h3>احجز طاولتك</h3>
+        <input type="text" placeholder="اسمك" required>
+        <input type="email" placeholder="البريد الإلكتروني" required>
+        <input type="date" required>
+        <button type="submit" class="btn-reserve">احجز الآن</button>
+      </form>
       <div class="map">
-        <iframe src="https://maps.google.com/maps?q=cairo&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+        <iframe src="https://maps.google.com/maps?q=egypt&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-links">
-      <a href="#">الرئيسية</a>
-      <a href="#">لماذا نحن</a>
-      <a href="#">قائمة الطعام</a>
-      <a href="#">العروض</a>
-      <a href="#">التواصل</a>
-    </div>
-    <div class="social-links">
-      <a href="#"><i class="fab fa-facebook-f"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-    </div>
-    <p>&copy; 2025 Etalyano. جميع الحقوق محفوظة.</p>
+    <div class="footer-links"><a href="#hero">الرئيسية</a><a href="#menu">قائمة الطعام</a><a href="#contact">التواصل</a></div>
+    <div class="social-links"><a href="#"><i class="fab fa-facebook"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-instagram"></i></a></div>
+    <p>&copy; 2025 Etalyano. جميع الحقوق محفوظة</p>
   </footer>
 
-  <!-- JS -->
+  <!-- SCRIPTS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
   <script>
     // SPLASH SCREEN
-    window.addEventListener('load',()=>{document.getElementById('splash').style.display='none';});
-
-    // MENU FILTER
-    const filterButtons=document.querySelectorAll('.filter-buttons button');
-    const menuItems=document.querySelectorAll('.menu-item');
-    filterButtons.forEach(btn=>{
-      btn.addEventListener('click',()=>{
-        filterButtons.forEach(b=>b.classList.remove('active'));
-        btn.classList.add('active');
-        const filter=btn.getAttribute('data-filter');
-        menuItems.forEach(item=>{
-          if(filter==='all'||item.classList.contains(filter)){
-            item.style.display='block';
-          }else{item.style.display='none';}
-        });
-      });
+    window.addEventListener('load', function(){
+      document.getElementById('splash').style.display='none';
     });
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
