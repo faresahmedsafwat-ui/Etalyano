@@ -1,0 +1,281 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Etalyano</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Poppins:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+  <style>
+  /* SPLASH SCREEN */
+  #splash {
+    position: fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:36px;
+    font-weight:700;
+    color:white;
+    z-index:100000;
+    background: linear-gradient(135deg, #FFD700, #32CD32);
+    font-family: 'Poppins', sans-serif;
+    text-align:center;
+  }
+
+  /* GLOBAL STYLES */
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Cairo', sans-serif;background-color:#FAF6F2;color:#333;line-height:1.6;direction:rtl;scroll-behavior:smooth;padding-top:76px;}
+  .container{max-width:1100px;margin:0 auto;padding:0 20px;}
+  header{position:fixed;top:0;width:100%;padding:15px 0;background-color:#2C3E50;transition:background-color 0.3s ease;z-index:10000;}
+  header .container{display:flex;justify-content:space-between;align-items:center;}
+  .logo{font-size:28px;font-weight:700;color:#D35400;}
+  nav ul{list-style:none;display:flex;gap:25px;}
+  nav ul li a{text-decoration:none;color:#fff;font-weight:600;font-size:16px;transition:color 0.3s ease;}
+  nav ul li a:hover{color:#FFD700;}
+  .btn-reserve{background-color:#D35400;color:#fff;padding:10px 22px;border:none;border-radius:5px;font-weight:700;cursor:pointer;}
+
+  /* HERO */
+  #hero{height:90vh;background:url('https://tse4.mm.bing.net/th/id/OIP.owmVdA58Bagw2TWGsr3MgQHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3') no-repeat center center / cover;display:flex;justify-content:center;align-items:center;text-align:center;color:white;text-shadow:1.5px 1.5px 5px rgba(0,0,0,0.7);}
+  .hero-content{max-width:500px;}
+  .hero-content h1{font-size:48px;font-weight:700;margin-bottom:15px;font-family:'Poppins',sans-serif;}
+  .hero-content p{font-size:22px;margin-bottom:25px;font-family:'Open Sans',sans-serif;}
+  .hero-content .btn-view-menu{background-color:#D35400;color:#fff;padding:12px 28px;border:none;border-radius:6px;font-weight:700;cursor:pointer;}
+
+  /* WHY US */
+  #why{background-color:#FAF6F2;padding:60px 0;text-align:center;}
+  #why h2{font-size:36px;margin-bottom:40px;color:#D35400;font-family:'Poppins',sans-serif;}
+  .features{display:flex;justify-content:center;gap:30px;flex-wrap:wrap;}
+  .feature{background-color:#fff;padding:25px 20px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.1);width:240px;transform:translateY(0);opacity:1;transition:transform .6s ease,opacity .6s ease;}
+  .feature i{font-size:40px;color:#D35400;margin-bottom:15px;}
+  .feature h3{color:#D35400;font-weight:700;margin-bottom:10px;font-size:20px;}
+  .feature p{color:#555;font-size:16px;}
+
+  /* MENU */
+  #menu{background-color:#fff;padding:60px 0;text-align:center;}
+  #menu h2{font-size:36px;margin-bottom:35px;color:#D35400;}
+  .filter-buttons{margin-bottom:30px;}
+  .filter-buttons button{background:transparent;border:2px solid #D35400;color:#D35400;font-weight:700;font-size:16px;padding:10px 22px;border-radius:25px;margin:0 8px;cursor:pointer;}
+  .filter-buttons button.active,.filter-buttons button:hover{background-color:#D35400;color:white;}
+  .menu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px;}
+  .menu-item{background-color:#FAF6F2;border-radius:8px;box-shadow:0 2px 10px rgba(211,84,0,0.15);overflow:hidden;opacity:1;transform:translateY(0);transition:opacity .45s ease,transform .45s ease;}
+  .menu-item img{width:100%;height:140px;object-fit:cover;border-bottom:3px solid #D35400;}
+  .menu-item h3{margin:15px 0 8px;font-size:20px;color:#D35400;}
+  .menu-item p{font-size:18px;color:#F1C40F;font-weight:700;margin-bottom:15px;}
+
+  /* OFFERS */
+  #offers{background-color:#FAF6F2;padding:60px 0;text-align:center;}
+  .offer-box{display:flex;justify-content:center;gap:35px;flex-wrap:wrap;align-items:center;}
+  .offer-box img{width:320px;border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,0.15);}
+  .offer-details{max-width:420px;text-align:right;}
+  .offer-details p{font-size:22px;margin-bottom:15px;color:#333;}
+  #countdown{font-size:28px;font-weight:700;color:#D35400;}
+
+  /* TESTIMONIALS */
+  #testimonials{background-color:#fff;padding:60px 0;text-align:center;}
+  .testimonial-slider{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;max-width:1000px;margin:0 auto;}
+  .testimonial{background:#FAF6F2;border-radius:12px;padding:20px;width:300px;box-shadow:0 2px 10px rgba(0,0,0,0.1);text-align:center;}
+  .testimonial img{width:80px;height:80px;border-radius:50%;object-fit:cover;margin-bottom:15px;}
+  .testimonial p{font-size:18px;color:#555;margin-bottom:10px;}
+  .testimonial h4{font-weight:700;color:#D35400;}
+
+  /* CONTACT */
+  #contact{background-color:#FAF6F2;padding:60px 0;}
+  #contact .container{display:flex;flex-wrap:wrap;gap:40px;justify-content:center;}
+  #reservation{flex:1 1 400px;display:flex;flex-direction:column;gap:20px;}
+  .map{flex:1 1 400px;border-radius:12px;overflow:hidden;box-shadow:0 4px 15px rgba(0,0,0,0.2);}
+  .map iframe{width:100%;height:100%;min-height:400px;border:none;}
+  footer{background-color:#2C3E50;color:white;padding:30px 0;text-align:center;}
+  footer .footer-links,footer .social-links{display:flex;justify-content:center;gap:30px;margin-bottom:20px;flex-wrap:wrap;}
+  footer .footer-links a,footer .social-links a{color:#fff;font-weight:600;text-decoration:none;}
+  footer .footer-links a:hover,footer .social-links a:hover{color:#FFD700;}
+  @media (max-width:768px){nav ul{display:none;}#hero{padding:0 20px;text-align:center;justify-content:center;}.features{flex-direction:column;}.offer-box{flex-direction:column;}#contact .container{flex-direction:column;}}
+  </style>
+</head>
+
+<body>
+  <!-- SPLASH SCREEN -->
+  <div id="splash">مرحبًا بك في Etalyano</div>
+
+  <!-- HEADER -->
+  <header id="header">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand logo" href="#">Etalyano</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#hero">الرئيسية</a></li>
+            <li class="nav-item"><a class="nav-link" href="#why">لماذا نحن</a></li>
+            <li class="nav-item"><a class="nav-link" href="#menu">قائمة الطعام</a></li>
+            <li class="nav-item"><a class="nav-link" href="#offers">العروض</a></li>
+            <li class="nav-item"><a class="nav-link" href="#testimonials">آراء العملاء</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">التواصل</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="container hero-content">
+      <h1>أطيب الأطباق بأجواء ساحرة</h1>
+      <p>استمتع معنا بتجربة طعام لا تنسى</p>
+      <button class="btn btn-primary btn-view-menu">عرض القائمة</button>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+<section id="why">
+  <h2>لماذا تختارنا</h2>
+  <div class="features">
+    <div class="feature"><i class="fas fa-utensils"></i><h3>أطباق لذيذة</h3><p>أفضل المكونات وأشهى الوصفات.</p></div>
+    <div class="feature"><i class="fas fa-mug-hot"></i><h3>جو مريح</h3><p>تجربة تناول طعام لا مثيل لها.</p></div>
+    <div class="feature"><i class="fas fa-concierge-bell"></i><h3>خدمة ممتازة</h3><p>فريقنا يقدم لك أفضل خدمة.</p></div>
+  </div>
+</section>
+
+  <!-- MENU -->
+  <section id="menu">
+    <h2>قائمة الطعام</h2>
+    <div class="filter-buttons">
+      <button class="active" data-filter="all">الكل</button>
+      <button data-filter="pizza">بيتزا</button>
+      <button data-filter="pasta">  كريبات </button>
+      <button data-filter="dessert">حلويات</button>
+        <button data-filter="pasta">  عصاير  </button>
+    </div>
+    <div class="menu-grid">
+      <!-- هنا محتوى الأكلات كما كان -->
+      <div class="menu-item pizza"><img src="https://th.bing.com/th/id/R.2a643cf63ea0952dec79dd63abff93f4?rik=rZkn9sdf3AE70A&riu=http%3a%2f%2fwww.papajohnsegypt.com%2fimages%2fProducts%2fMargherita.jpg&ehk=FSNCnEPJzfKo%2bw9hG%2bicqgMncn0Oub0bBmJXmzvR4ys%3d&risl=&pid=ImgRaw&r=0" alt=""><h3>بيتزا مارغريتا</h3><p>120 ج</p></div>
+      <div class="menu-item pizza"><img src="https://tse2.mm.bing.net/th/id/OIP.SlMifJwaSa0FJ4qIam9G_AHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt=""><h3>بيتزا ببروني</h3><p>135 ج</p></div>
+      <div class="menu-item pizza"><img src="https://th.bing.com/th/id/R.695cb752aa1bf1aa1eb93d1dee80e0ef?rik=CcfprQ68EVcUKw&pid=ImgRaw&r=0" alt=""><h3>بيتزا خضار</h3><p>110 ج</p></div>
+      <div class="menu-item pasta"><img src="https://tse2.mm.bing.net/th/id/OIP.T7cqsD_Rj7Qk6njnmYQUxgHaEJ?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt=""><h3>عصير برتقال</h3><p>40 ج</p></div>
+      <div class="menu-item pasta"><img src="https://tse2.mm.bing.net/th/id/OIP.e0DbQEi_tF0oR4Z42obZ4gHaE7?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt=""><h3>كريب فراخ</h3><p>90 ج</p></div>
+      <div class="menu-item pasta"><img src="https://tse4.mm.bing.net/th/id/OIP.fOC4QWKwGXVT6ZvdL0IQ9wHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt=""><h3>عصير ليمون</h3><p>30 ج</p></div>
+      <div class="menu-item dessert"><img src="https://www.thaqafnafsak.com/wp-content/uploads/2014/12/CherryCheesecake2LR1-1024x768.jpg" alt=""><h3>تشيز كيك</h3><p>100 ج</p></div>
+      <div class="menu-item dessert"><img src="https://tse2.mm.bing.net/th/id/OIP.voxbxDdmrfV7v97VeQI6JQHaEJ?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt=""><h3>كرواسون</h3><p>150 ج</p></div>
+      <div class="menu-item dessert"><img src="https://tse2.mm.bing.net/th/id/OIP.S_kFKpz0u4XtdfGvN6iQ5QHaDt?r=0&w=1300&h=650&rs=1&pid=ImgDetMain&o=7&rm=3" alt=""><h3>آيس كريم فانيلا</h3><p>35 ج</p></div>
+      <div class="menu-item pizza"><img src="https://tse4.mm.bing.net/th/id/OIP.P3Iyl8gFrlPfoA86JUJexwAAAA?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt=""><h3>كريب ميكس</h3><p>120 ج</p></div>
+      <div class="menu-item pasta"><img src="https://th.bing.com/th/id/R.f70ac302ee7d5f3c66dc76a928973c72?rik=SrAHAknS7E3Sdg&pid=ImgRaw&r=0" alt=""><h3>ايس كوفي</h3><p>60 ج</p></div>
+      <div class="menu-item dessert"><img src="https://th.bing.com/th/id/OIP.cpnfOhWmET_AVlVmOKyjegHaEK?r=0&o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3" alt=""><h3>ميلك شيك فانليا</h3><p>80 ج</p></div>
+      <div class="menu-item dessert"><img src="https://www.thaqafnafsak.com/wp-content/uploads/2014/12/1734527.jpg" alt=""><h3>ميلك شيك شوكلاته</h3><p>90 ج</p></div>
+    </div>
+  </section>
+
+  <!-- OFFERS -->
+  <section id="offers">
+    <h2>عروض اليوم</h2>
+    <div class="offer-box">
+      <img src="https://tse4.mm.bing.net/th/id/R.2a643cf63ea0952dec79dd63abff93f4?rik=rZkn9sdf3AE70A&riu=http%3a%2f%2fwww.papajohnsegypt.com%2fimages%2fProducts%2fMargherita.jpg&ehk=FSNCnEPJzfKo%2bw9hG%2bicqgMncn0Oub0bBmJXmzvR4ys%3d&risl=&pid=ImgRaw&r=0" alt="">
+      <div class="offer-details">
+        <p>خصم 25% على جميع الطلبات حتى نهاية الأسبوع</p>
+        <div id="countdown">00:00:00</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials">
+    <h2>آراء العملاء</h2>
+    <div class="testimonial-slider">
+      <div class="testimonial"><img src="https://randomuser.me/api/portraits/men/1.jpg" alt=""><p>الطعام رائع والخدمة ممتازة!</p><h4>أحمد</h4></div>
+      <div class="testimonial"><img src="https://randomuser.me/api/portraits/women/2.jpg" alt=""><p>تجربة رائعة، سأعود بالتأكيد.</p><h4>سارة</h4></div>
+      <div class="testimonial"><img src="https://randomuser.me/api/portraits/men/3.jpg" alt=""><p>أفضل مطعم إيطالي في المدينة.</p><h4>محمد</h4></div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div id="reservation">
+        <h2>احجز الآن</h2>
+        <input type="text" placeholder="الاسم">
+        <input type="tel" placeholder="رقم الهاتف">
+        <input type="date" placeholder="التاريخ">
+        <button class="btn btn-reserve">احجز</button>
+      </div>
+      <div class="map">
+        <iframe src="https://maps.google.com/maps?q=egypt&t=&z=5&ie=UTF8&iwloc=&output=embed"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-links">
+      <a href="#hero">الرئيسية</a>
+      <a href="#menu">القائمة</a>
+      <a href="#contact">التواصل</a>
+    </div>
+    <div class="social-links">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+    </div>
+    <p>جميع الحقوق محفوظة &copy; 2025 Etalyano</p>
+  </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  // SPLASH
+  window.addEventListener('load',()=>{document.getElementById('splash').style.display='none';});
+
+  // MENU FILTER
+  const filterButtons = document.querySelectorAll('.filter-buttons button');
+  const menuItems = document.querySelectorAll('.menu-item');
+  filterButtons.forEach(button=>{
+    button.addEventListener('click',()=>{
+      filterButtons.forEach(btn=>btn.classList.remove('active'));
+      button.classList.add('active');
+      const filter = button.dataset.filter;
+      menuItems.forEach(item=>{
+        if(filter==='all'){item.style.display='block';} 
+        else{item.style.display = item.classList.contains(filter)?'block':'none';}
+      });
+    });
+  });
+
+  // OFFERS COUNTDOWN
+  const countdownEl = document.getElementById('countdown');
+  const offerEnd = new Date(); offerEnd.setDate(offerEnd.getDate() + 2);
+  function updateCountdown(){
+    const now = new Date(); const diff = offerEnd - now;
+    if(diff <= 0){countdownEl.innerHTML = "انتهى العرض!"; clearInterval(timer); return;}
+    const hours = Math.floor(diff/1000/60/60);
+    const minutes = Math.floor((diff/1000/60)%60);
+    const seconds = Math.floor((diff/1000)%60);
+    countdownEl.innerHTML = String(hours).padStart(2,'0') + ":" + String(minutes).padStart(2,'0') + ":" + String(seconds).padStart(2,'0');
+  }
+  const timer = setInterval(updateCountdown,1000); updateCountdown();
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
